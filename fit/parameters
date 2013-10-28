@@ -1,0 +1,18 @@
+#
+#	LcFit
+#
+GeneralLcFit.maxdchi2			0.0001	# convergence criterion
+GeneralLcFit.maxfchi2			1e-6	# convergence criterion
+GeneralLcFit.maxit			150	# maximum iterations
+GeneralLcFit.nchi			25	# chi^2 history buffer
+GeneralLcFit.pkmin			1.05	# definition of peak point
+FiniteSourceFit.limb.darkening.a.U   	0.0
+FiniteSourceFit.limb.darkening.b.U   	0.0
+FiniteSourceFit.limb.darkening.a.B   	0.0
+FiniteSourceFit.limb.darkening.b.B   	0.0
+FiniteSourceFit.limb.darkening.a.V   	0.0
+FiniteSourceFit.limb.darkening.b.V   	0.0
+FiniteSourceFit.limb.darkening.a.R   	0.0
+FiniteSourceFit.limb.darkening.b.R   	0.0
+FiniteSourceFit.limb.darkening.a.I   	0.0
+FiniteSourceFit.limb.darkening.b.I   	0.0

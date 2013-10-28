@@ -1,0 +1,51 @@
+Normalization method for DaophotLc time series:
+
+The normalization (calculation of magnitude offsets to each
+observation) occurs in two steps. The first is an iterative scheme in
+which the code picks an observation as a baseline and iterates
+the following two steps:
+
+1) Expand the set of normalized observations by normalizing all
+observations that contain reference stars for which magnitudes have
+been determined.  New normalizations are determined by either median
+or average
+
+2) Expand the set of known reference stars to include all reference
+stars in the set of currently normalized images.  The new magnitudes
+are determined by either median or average of all occurances of a
+given refernce star.
+
+until no new observations can be added.  The set of normalized reference
+star measurements are then sigma clipped based on the estimated normalization
+solution and reference star magnitudes.  The second step is an analytic
+solution to the chi^2 minimization 
+
+chi2 = sum over n & t ( ( mag(t,n) - Mag(n) - dMag(t) ) / err(t,n) )^2
+
+where mag(t,n) and err(t,n) are the uncalibrated measured quantities and
+Mag(n) and dMag(t) are the parameters to be fit.  Since the resulting
+system of equations is underconstrained, an additional constraint is 
+imposed in that one of the dMag(t) is set to zero, defining the
+reference observation.
+
+Explanation of fields in DaophotLc:
+
+mag: normalized target star magnitude
+err: Daophot reported magnitude error
+sky: Daophot sky value (adu)
+xpix & ypix: pixel coordinates in ctio observation
+xFWHM & yFWHM: Daophot reported psf parameters
+	*** Doug *** these are Half-Width-Half-Max!!!!
+chi2: 
+ & sharp:
+
+dMag: Fit magnitude offset to the reference observation
+dErr: Statistical error in dMag:
+	dErr(t) = sqrt( sum over n ( 1 / err(t,n)^2 ) )
+dChi2: Chi^2 / d.o.f. of reference stars in observation to normalization fit:
+	dChi2(t) = sum over n ((mag(t,n)-Mag(n)-dMag(t))/err(t,n) )^2/N
+	where N is the number of reference stars in observation t.
+
+
+Note: The normalization stars magnitudes ( Mag(n) ) and their fit statistics
+are currently not output.

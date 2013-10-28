@@ -1,0 +1,63 @@
+#
+# Common Lightcurve Interface default parameters file
+# last modified: 10 March 1998, jdr
+#
+#	SodophotCuts
+#
+SodophotCuts.refJD		  2448623.5	# reference Julian Date
+SodophotCuts.doCuts			  1	# enable cuts
+SodophotCuts.verbose			  1	# print diagnostic messages
+SodophotCuts.publicCuts			  0	# remove proprietary data
+SodophotCuts.SideOfPier			  0	# 0 = both, 1 = W, -1 = E 
+SodophotCuts.heliocentric		  0	# generate heliocentric dates
+SodophotCuts.calibrate			  0	# 0=no, 1=dejitter, 2=standard
+SodophotCuts.badobs.file		  0	# choose: 0 | + | filename
+SodophotCuts.error.scale		  1	# change error scale
+SodophotCuts.error.extra	      0.014	# add in quadrature
+SodophotCuts.type.mod20			  1	# use type mod 20 instead
+SodophotCuts.type.9ok			  1	# type flag == 9 is ok
+SodophotCuts.type.max			  6	# type flag
+SodophotCuts.chi2.max			140	# chi2/psf flag
+SodophotCuts.crowding.max		170	# crowding flag
+SodophotCuts.cosmic.max			  1	# cosmic ray flag
+SodophotCuts.missing.max		 50	# missing pixel flag
+SodophotCuts.err.min			  0	# magnitude error
+SodophotCuts.err.max			  3	# magnitude error
+SodophotCuts.mag.min			-15	# magnitude
+SodophotCuts.chi2mag.max		 -7	# used with chi2.max
+SodophotCuts.seeing.max			  8	# average seeing
+#
+#	DaophotCuts
+#
+DaophotCuts.refJD		  2448623.5	# reference Julian Date
+DaophotCuts.doCuts			  1	# enable cuts
+DaophotCuts.badobs.file			  0	# choose: 0 | + | filename
+DaophotCuts.error.scale			  1	# change error scale
+DaophotCuts.error.extra			  0	# add in quadrature
+DaophotCuts.quadErr.max			  3	# sqrt(err^2+dMagErr^2)
+DaophotCuts.dMagChi2.max		  4	# normalization quality
+DaophotCuts.sharpness.min	       -0.5	# sharpness
+DaophotCuts.sharpness.max		  1	# sharpness
+DaophotCuts.psfAspect.max		0.4	# |(xFWHM-yFWHM)/(xFWHM+yFWHM)|
+DaophotCuts.min.norm			  3	# min norm stars
+#
+#	ReimannPhaser
+#
+ReimannPhaser.TYPE			  2	# curve type: trig,ssmth,cubic
+ReimannPhaser.HARM			  1	# trig: number of harmonics
+ReimannPhaser.BASS			0.0	# supersmoother: bass parameter
+ReimannPhaser.KNOT			 20	# cubic spline: number of knots
+ReimannPhaser.SUBN			100	# observations per subset
+ReimannPhaser.SUBP		       20.0	# periods too large for subset
+ReimannPhaser.FULL			  1	# refine estimates w/ full data
+ReimannPhaser.MINP			0.3	# minimum period considered
+ReimannPhaser.MAXP			100	# maximum period considered
+ReimannPhaser.RATE			6.0	# sampling rate init estim grid
+ReimannPhaser.NMIN			 20	# num intermediate estimates
+ReimannPhaser.FWID			1.0	# width of final grids
+ReimannPhaser.FNUM			100	# num values in each final grid
+ReimannPhaser.SHOW			 10	# num period estims displayed
+#
+#	miscellaneous
+#
+LcMerge.verbose				  0	# report merge stats

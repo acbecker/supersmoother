@@ -1,0 +1,5 @@
+cd site; make clean; make; cd ../
+cd clif; make clean; make; cd ../
+cd fit; make clean; make; cd ../
+make fazBasic
+
